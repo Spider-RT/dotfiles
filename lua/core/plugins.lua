@@ -11,8 +11,7 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
+return require('packer').startup(function(use) use 'wbthomason/packer.nvim'
 
   -- Colorschemes
   use 'rebelot/kanagawa.nvim'
@@ -25,6 +24,7 @@ return require('packer').startup(function(use)
       updater = function() vim.cmd [[ ":TSUpdate" ]] end
   }
   use 'cohama/lexima.vim'
+
   use {
       'nvim-telescope/telescope.nvim',
 
@@ -63,6 +63,52 @@ return require('packer').startup(function(use)
           "lewis6991/gitsigns.nvim",
       }
   }
+
+  use {
+      "MeanderingProgrammer/render-markdown.nvim",
+      requires = {
+          "latex-lsp/tree-sitter-latex",
+          "tree-sitter-grammars/tree-sitter-yaml",
+          "nvim-web-devicons",
+      },
+      config = function() 
+          require("render-markdown").setup({
+            completions = {
+                lsp = {
+                    enabled = true,
+                },
+            },
+            latex = {
+                enabled = true,
+                render_modes = false,
+                converter = { 'utftex', 'latex2text' },
+                inline = true,
+                block = false,
+                position = 'below',
+            },
+        }) 
+    end
+  }
+
+  use {
+      "natecraddock/workspaces.nvim",
+      config = function() require('workspaces').setup({
+          auto_open = true,
+          notify_info = true,
+          hooks = {
+              open = { "Telescope find_files" },
+          }
+      }) end
+  }
+
+  use "lervag/wiki.vim"
+
+  use {
+      "junegunn/limelight.vim"
+  }
+
+  use "slint-ui/vim-slint"
+ 
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

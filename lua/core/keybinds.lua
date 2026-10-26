@@ -18,6 +18,8 @@ set("n", "<leader>s", "e #<CR>", {silent=true})
 set("n", "<C-c>", ":Commentary<CR>", {silent=true})
 set("n", "0", "^")
 
-set("n", "<leader>th", ":tabprevious<CR>", {silent=true})
-set("n", "<leader>tl", ":tabnext<CR>", {silent=true})
-set("n", "<leader>tn", ":tabnew<CR>", {silent=true})
+set("n", "<leader>H", ":BufferPrevious<CR>", {silent=true})
+set("n", "<leader>L", ":BufferNext<CR>", {silent=true})
+set("n", "<leader>Tn", ":tabnew<CR>", {silent=true})
+
+set("n", "<leader>W", ":Telescope workspaces<CR>", { silent=true })

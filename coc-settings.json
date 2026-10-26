@@ -2,4 +2,20 @@
     "diagnostic.virtualTextCurrentLineOnly": false,
     "diagnostic.checkCurrentLine": true,
     "diagnostic.virtualText": true,
+    "rust-analyzer.server.path": "~/.cargo/bin/rust-analyzer",
+
+    "languageserver": {
+        "slint": {
+            "command": "slint-lsp",
+            "filetypes": ["slint"]
+        },
+        "odin": {
+            "command": "ols",
+            "filetypes": ["odin"]
+        },
+        "texlab": {
+            "command": "texlab",
+            "filetypes": ["text", "plaintex", "bib", "markdown"]
+        }
+    }
 }

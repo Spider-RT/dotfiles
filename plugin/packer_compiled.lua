@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/irtd/.cache/nvim/packer_hererocks/2.1.1774896198/share/lua/5.1/?.lua;/home/irtd/.cache/nvim/packer_hererocks/2.1.1774896198/share/lua/5.1/?/init.lua;/home/irtd/.cache/nvim/packer_hererocks/2.1.1774896198/lib/luarocks/rocks-5.1/?.lua;/home/irtd/.cache/nvim/packer_hererocks/2.1.1774896198/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/irtd/.cache/nvim/packer_hererocks/2.1.1774896198/lib/lua/5.1/?.so"
+local package_path_str = "/home/irtd/.cache/nvim/packer_hererocks/2.1.1785763465/share/lua/5.1/?.lua;/home/irtd/.cache/nvim/packer_hererocks/2.1.1785763465/share/lua/5.1/?/init.lua;/home/irtd/.cache/nvim/packer_hererocks/2.1.1785763465/lib/luarocks/rocks-5.1/?.lua;/home/irtd/.cache/nvim/packer_hererocks/2.1.1785763465/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/irtd/.cache/nvim/packer_hererocks/2.1.1785763465/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -98,6 +98,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/irtd/.local/share/nvim/site/pack/packer/start/lexima.vim",
     url = "https://github.com/cohama/lexima.vim"
+  },
+  ["limelight.vim"] = {
+    loaded = true,
+    path = "/home/irtd/.local/share/nvim/site/pack/packer/start/limelight.vim",
+    url = "https://github.com/junegunn/limelight.vim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -155,6 +160,12 @@ _G.packer_plugins = {
     path = "/home/irtd/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["render-markdown.nvim"] = {
+    config = { "\27LJ\2\n·\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\nlatex\1\0\1\nlatex\0\14converter\1\3\0\0\vutftex\15latex2text\1\0\5\14converter\0\fenabled\2\rposition\vcenter\nblock\2\vinline\2\nsetup\20render-markdown\frequire\0" },
+    loaded = true,
+    path = "/home/irtd/.local/share/nvim/site/pack/packer/start/render-markdown.nvim",
+    url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+  },
   ripgrep = {
     loaded = true,
     path = "/home/irtd/.local/share/nvim/site/pack/packer/start/ripgrep",
@@ -172,18 +183,52 @@ _G.packer_plugins = {
     path = "/home/irtd/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tree-sitter-latex"] = {
+    loaded = true,
+    path = "/home/irtd/.local/share/nvim/site/pack/packer/start/tree-sitter-latex",
+    url = "https://github.com/latex-lsp/tree-sitter-latex"
+  },
+  ["tree-sitter-yaml"] = {
+    loaded = true,
+    path = "/home/irtd/.local/share/nvim/site/pack/packer/start/tree-sitter-yaml",
+    url = "https://github.com/tree-sitter-grammars/tree-sitter-yaml"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/irtd/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-slint"] = {
+    loaded = true,
+    path = "/home/irtd/.local/share/nvim/site/pack/packer/start/vim-slint",
+    url = "https://github.com/slint-ui/vim-slint"
+  },
+  ["wiki.vim"] = {
+    loaded = true,
+    path = "/home/irtd/.local/share/nvim/site/pack/packer/start/wiki.vim",
+    url = "https://github.com/lervag/wiki.vim"
+  },
+  ["workspaces.nvim"] = {
+    config = { "\27LJ\2\n›\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\3=\3\a\2B\0\2\1K\0\1\0\nhooks\topen\1\0\1\topen\0\1\2\0\0\25Telescope find_files\1\0\3\nhooks\0\16notify_info\2\14auto_open\2\nsetup\15workspaces\frequire\0" },
+    loaded = true,
+    path = "/home/irtd/.local/share/nvim/site/pack/packer/start/workspaces.nvim",
+    url = "https://github.com/natecraddock/workspaces.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: render-markdown.nvim
+time([[Config for render-markdown.nvim]], true)
+try_loadstring("\27LJ\2\n·\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\nlatex\1\0\1\nlatex\0\14converter\1\3\0\0\vutftex\15latex2text\1\0\5\14converter\0\fenabled\2\rposition\vcenter\nblock\2\vinline\2\nsetup\20render-markdown\frequire\0", "config", "render-markdown.nvim")
+time([[Config for render-markdown.nvim]], false)
 -- Config for: oil.nvim
 time([[Config for oil.nvim]], true)
 try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0", "config", "oil.nvim")
 time([[Config for oil.nvim]], false)
+-- Config for: workspaces.nvim
+time([[Config for workspaces.nvim]], true)
+try_loadstring("\27LJ\2\n›\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\3=\3\a\2B\0\2\1K\0\1\0\nhooks\topen\1\0\1\topen\0\1\2\0\0\25Telescope find_files\1\0\3\nhooks\0\16notify_info\2\14auto_open\2\nsetup\15workspaces\frequire\0", "config", "workspaces.nvim")
+time([[Config for workspaces.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
